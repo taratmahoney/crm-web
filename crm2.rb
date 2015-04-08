@@ -1,5 +1,5 @@
-require_relative 'contact'
 require_relative 'rolodex'
+require_relative 'contact'
 require 'sinatra'
 
 $rolodex = Rolodex.new
@@ -12,13 +12,15 @@ get "/" do
 end
 
 get "/contacts" do
-  @contacts << Contact.new("Tara", "Mahoney", "tara.mahoney@me.com", "Developer")
-  @contacts << Contact.new("Taylor", "Scollon", "taylorscollon@gmail.com", "Designer")
-  @contacts << Contact.new("Mollie", "Anderson", "mollieaanderson@gmail.com", "Marketing")
-  
   erb :contacts
 end
 
 get "/contacts/new" do
   erb :contacts_new
+end
+
+post "/contacts" do
+  new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
+  $rolodex.add_contact(new_contact)
+  redirect to('/contacts')
 end
