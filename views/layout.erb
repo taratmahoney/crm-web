@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My app</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1> Welcome to <%= @crm_app_name %></h1>
+  <nav>
+  <ul>
+    <li> <a href="/contacts"> View all contacts</a></li> 
+    <li> <a href="/contacts/new"> Add a new contact</a></li>
+  </ul>
+  </nav>
+  <%= yield %>
+</body>
+</html>
