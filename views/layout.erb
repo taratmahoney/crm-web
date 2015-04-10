@@ -3,16 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>My app</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <link href='http://fonts.googleapis.com/    css?family=Open+Sans:300italic,400italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <h1> Welcome to <%= @crm_app_name %></h1>
   <nav>
-  <ul>
-    <li> <a href="/contacts"> View all contacts</a></li> 
-    <li> <a href="/contacts/new"> Add a new contact</a></li>
-  </ul>
+    <ul>
+      <li> <a href="/contacts"> View all contacts</a></li> 
+      <li> <a href="/contacts/new"> Add a new contact</a></li>
+    </ul>
   </nav>
-  <%= yield %>
+  <header><h1> <%= @page_title %></h1></header>
+  
+    <%= yield %>
+  
+  <footer>
+    <div class="sitemap">
+      <ul class="footer-categories">
+        <div class="footer-subcategories">
+        <li><strong> SOCIAL</strong></li>
+          <ul>
+            <li>FACEBOOK</li>
+            <li>TWITTER</li>
+          </ul>
+        </div>
+        <div class="footer-subcategories">
+          <li><strong>CONTACT</strong></li>
+            <ul>
+              <li>OFFICE</li>
+              <li>EMAIL</li>
+            </ul>
+      </ul>
+    </div>
+    <p> Built by Tara Mahoney</p>
+  </footer>
 </body>
 </html>

@@ -7,15 +7,17 @@ $rolodex = Rolodex.new
 #routes
 
 get "/" do 
-  @crm_app_name = "My CRM"
+  @page_title = "The Contact Manager"
   erb :index  
 end
 
 get "/contacts" do
+  @page_title = "Contacts"
   erb :contacts
 end
 
 get "/contacts/new" do
+  @page_title = "Add a new contact"
   erb :contacts_new
 end
 
