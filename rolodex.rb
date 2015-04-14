@@ -15,4 +15,8 @@ class Rolodex
   def find(contact_id)
     @contacts.find { |contact| contact.id == contact_id} #should return the first element that matches the condition in the block
   end
+
+  def remove_contact(contact)
+    @contacts.delete(contact)
+  end
 end
