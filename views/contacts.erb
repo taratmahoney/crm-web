@@ -1,10 +1,9 @@
 <div class="width-container">
-  <h1> All Contacts </h1>
-  <div class="contacts">
+  
     <ul>
       <% $rolodex.contacts.each do |contact| %>
-        <li> <%= contact.first_name %> <%= contact.last_name %> </li>
+        <a href="/contacts/<%= contact.id %>"><li> <%= contact.first_name %> <%= contact.last_name %> </li></a>
       <% end %>
     </ul>
-  </div>
+ 
 </div>
